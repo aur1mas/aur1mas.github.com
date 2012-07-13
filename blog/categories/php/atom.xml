@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[aur1mas &lt;Aurimas Baubkus&gt;]]></title>
-  <link href="http://aur1mas.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: PHP | aur1mas &lt;Aurimas Baubkus&gt;]]></title>
+  <link href="http://aur1mas.github.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://aur1mas.github.com/"/>
   <updated>2012-07-13T18:19:54+03:00</updated>
   <id>http://aur1mas.github.com/</id>
@@ -28,7 +28,7 @@
 <h3>Problem</h3>
 
 
-<p>After this I started thinking how to integrate <strong>Composer</strong> into my deployment. I&#8217;m using Capistrano for deployment which is another great gem written in <a href="http://www.ruby-lang.org/en/" target="_blank">Ruby</a>. Main problem which I was solving - when deploying project Capsitrano creates new directories from each deployment. So each time Composer installed libs over &amp; over.</p>
+<p>After this I started thinking how to integrate <strong>Composer</strong> into my deployment. I'm using Capistrano for deployment which is another great gem written in <a href="http://www.ruby-lang.org/en/" target="_blank">Ruby</a>. Main problem which I was solving - when deploying project Capsitrano creates new directories from each deployment. So each time Composer installed libs over &amp; over.</p>
 
 <h3>Solution</h3>
 
@@ -46,9 +46,9 @@ namespace :deploy do
 end
 </code></pre>
 
-<p>I think code is self explanatory &amp; I don&#8217;t have write what every line does. But if you have any questions - feel free to ask in comments.</p>
+<p>I think code is self explanatory &amp; I don't have write what every line does. But if you have any questions - feel free to ask in comments.</p>
 
-<p><strong>P.S.</strong> improve my english :) If you&#8217;ve noticed any mistakes - write in comments. Thanks!</p>
+<p><strong>P.S.</strong> improve my english :) If you've noticed any mistakes - write in comments. Thanks!</p>
 
 <h3>Resources</h3>
 

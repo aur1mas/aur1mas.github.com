@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>aur1mas &lt;Aurimas Baubkus&gt;</title>
+  <title>Category: Composer - aur1mas &lt;Aurimas Baubkus&gt;</title>
   <meta name="author" content="aur1mas">
 
   
-  <meta name="description" content="Background After playing around with Ruby on Rails it was hard to comeback to PHP frameworks world. A lot of functionality was missing (assets, easy &hellip;">
+  <meta name="description" content="Category: Composer">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://aur1mas.github.com/">
+  <link rel="canonical" href="http://aur1mas.github.comblog/categories/composer/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -74,90 +74,40 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article role="article">
   
-  
-  
-    <article>
-      
   <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/12/configuring-composer-to-work-with-capistrano/">Composer + Capistrano</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-12T23:42:00+03:00" pubdate data-updated="true">Jul 12<span>th</span>, 2012</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Composer</h1>
     
   </header>
+  
+  <div id="blog-archives" class="category">
 
 
-  <div class="entry-content"><h3>Background</h3>
+
+  
+  <h2>2012</h2>
+
+<article>
+  
+<h1><a href="/blog/2012/07/12/configuring-composer-to-work-with-capistrano/">Composer + Capistrano</a></h1>
+<time datetime="2012-07-12T23:42:00+03:00" pubdate><span class='month'>Jul</span> <span class='day'>12</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/capistrano/'>Capistrano</a>, <a class='category' href='/blog/categories/composer/'>Composer</a>, <a class='category' href='/blog/categories/php/'>PHP</a></span>
+</footer>
 
 
-<p>After playing around with <a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a> it was hard to comeback to PHP frameworks world. A lot of functionality was missing (assets, easy deployment, rake &amp; etc). But most of all I missed <a href="http://gembundler.com/" target="_blank">Bundler system</a>.</p>
-
-<p>But recently I found <strong><a href="http://www.getcomposer.org" target="_blank">Composer</a></strong>. And started messing around. Installation was very simple. It took me 5-10 min. integrating <a href="http://framework.zend.com" target="_blank">Zend Framework</a> to existing project.</p>
-
-<h3>Problem</h3>
-
-
-<p>After this I started thinking how to integrate <strong>Composer</strong> into my deployment. I&#8217;m using Capistrano for deployment which is another great gem written in <a href="http://www.ruby-lang.org/en/" target="_blank">Ruby</a>. Main problem which I was solving - when deploying project Capsitrano creates new directories from each deployment. So each time Composer installed libs over &amp; over.</p>
-
-<h3>Solution</h3>
-
-
-<p>In the end I only had to write few lines of code &amp; put them in deploy.rb file.</p>
-
-<pre><code>before "deploy:finalize_update", "deploy:remove_dirs"
-
-namespace :deploy do
-    desc "run composer install and ensure all dependencies are installed"
-    task :install do
-        run "ln -s #{deploy_to}vendor #{deploy_to}current/vendor"
-        run "cd #{current_path} &amp;&amp; php composer.phar install"
-    end
-end
-</code></pre>
-
-<p>I think code is self explanatory &amp; I don&#8217;t have write what every line does. But if you have any questions - feel free to ask in comments.</p>
-
-<p><strong>P.S.</strong> improve my english :) If you&#8217;ve noticed any mistakes - write in comments. Thanks!</p>
-
-<h3>Resources</h3>
-
-
-<ul>
-    <li><a href="http://www.getcomposer.org" target="_blank">Composer</a></li>
-    <li><a href="http://guides.beanstalkapp.com/deployments/deploy-with-capistrano.html" target="_blank">Deploy with Capistrano</a></li>
-</ul>
+</article>
 
 </div>
-  
-  
 
-
-    </article>
   
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+</article>
+
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -174,7 +124,7 @@ end
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/aur1mas">@aur1mas</a> on GitHub
@@ -204,7 +154,7 @@ end
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -223,6 +173,7 @@ end
 
   
 </aside>
+
 
     </div>
   </div>

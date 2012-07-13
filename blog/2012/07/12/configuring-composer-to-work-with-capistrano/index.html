@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>aur1mas &lt;Aurimas Baubkus&gt;</title>
+  <title>Composer + Capistrano - aur1mas &lt;Aurimas Baubkus&gt;</title>
   <meta name="author" content="aur1mas">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://aur1mas.github.com/">
+  <link rel="canonical" href="http://aur1mas.github.com/blog/2012/07/12/configuring-composer-to-work-with-capistrano/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -74,15 +74,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/07/12/configuring-composer-to-work-with-capistrano/">Composer + Capistrano</a></h1>
+      <h1 class="entry-title">Composer + Capistrano</h1>
     
     
       <p class="meta">
@@ -105,7 +102,7 @@
   </header>
 
 
-  <div class="entry-content"><h3>Background</h3>
+<div class="entry-content"><h3>Background</h3>
 
 
 <p>After playing around with <a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a> it was hard to comeback to PHP frameworks world. A lot of functionality was missing (assets, easy deployment, rake &amp; etc). But most of all I missed <a href="http://gembundler.com/" target="_blank">Bundler system</a>.</p>
@@ -146,18 +143,63 @@ end
 </ul>
 
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">aur1mas</span></span>
+
+      
+
+
+
+
+
+
+
+
   
 
 
-    </article>
+<time datetime="2012-07-12T23:42:00+03:00" pubdate data-updated="true">Jul 12<span>th</span>, 2012</time>
+      
+
+<span class="categories">
   
-  <div class="pagination">
+    <a class='category' href='/blog/categories/capistrano/'>Capistrano</a>, <a class='category' href='/blog/categories/composer/'>Composer</a>, <a class='category' href='/blog/categories/php/'>PHP</a>
+  
+</span>
+
+
+    </p>
     
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://aur1mas.github.com/blog/2012/07/12/configuring-composer-to-work-with-capistrano/" data-via="aur1mas" data-counturl="http://aur1mas.github.com/blog/2012/07/12/configuring-composer-to-work-with-capistrano/" >Tweet</a>
+  
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -174,7 +216,7 @@ end
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/aur1mas">@aur1mas</a> on GitHub
@@ -204,7 +246,7 @@ end
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -224,6 +266,7 @@ end
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -238,7 +281,10 @@ end
       var disqus_shortname = 'aur1mas';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://aur1mas.github.com/blog/2012/07/12/configuring-composer-to-work-with-capistrano/';
+        var disqus_url = 'http://aur1mas.github.com/blog/2012/07/12/configuring-composer-to-work-with-capistrano/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
