@@ -1,0 +1,41 @@
+---
+layout: post
+title: "Composer + Capistrano"
+date: 2012-07-12 23:42
+comments: true
+categories: [Capistrano, Composer, PHP]
+---
+
+<h3>Background</h3>
+
+After playing around with <a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a> it was hard to comeback to PHP frameworks world. A lot of functionality was missing (assets, easy deployment, rake & etc). But most of all I missed <a href="http://gembundler.com/" target="_blank">Bundler system</a>.
+
+But recently I found <strong><a href="http://www.getcomposer.org" target="_blank">Composer</a></strong>. And started messing around. Installation was very simple. It took me 5-10 min. integrating <a href="http://framework.zend.com" target="_blank">Zend Framework</a> to existing project.
+
+<h3>Problem</h3>
+
+After this I started thinking how to integrate <strong>Composer</strong> into my deployment. I'm using Capistrano for deployment which is another great gem written in <a href="http://www.ruby-lang.org/en/" target="_blank">Ruby</a>. Main problem which I was solving - when deploying project Capsitrano creates new directories from each deployment. So each time Composer installed libs over & over.
+
+<h3>Solution</h3>
+
+In the end I only had to write few lines of code & put them in deploy.rb file.
+
+    before "deploy:finalize_update", "deploy:remove_dirs"
+
+    namespace :deploy do
+        desc "run composer install and ensure all dependencies are installed"
+        task :install do
+            run "ln -s #{deploy_to}vendor #{deploy_to}current/vendor"
+            run "cd #{current_path} && php composer.phar install"
+        end
+    end
+    
+I think code is self explanatory & I don't have write what every line does. But if you have any questions - feel free to ask in comments.
+
+<strong>P.S.</strong> improve my english :) If you've noticed any mistakes - write in comments. Thanks!
+
+<h3>Resources</h3>
+<ul>
+    <li><a href="http://www.getcomposer.org" target="_blank">Composer</a></li>
+    <li><a href="http://guides.beanstalkapp.com/deployments/deploy-with-capistrano.html" target="_blank">Deploy with Capistrano</a></li>
+</ul>
