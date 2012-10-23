@@ -10,11 +10,11 @@ categories: [Capistrano, Composer, PHP]
 
 After playing around with <a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a> it was hard to comeback to PHP frameworks world. A lot of functionality was missing (assets, easy deployment, rake & etc). But most of all I missed <a href="http://gembundler.com/" target="_blank">Bundler system</a>.
 
-But recently I found <strong><a href="http://www.getcomposer.org" target="_blank">Composer</a></strong>. And started messing around. Installation was very simple. It took me 5-10 min. integrating <a href="http://framework.zend.com" target="_blank">Zend Framework</a> to existing project.
+But recently I've found <strong><a href="http://www.getcomposer.org" target="_blank">Composer</a></strong>. And started messing around. Installation was very simple. It took me 5-10 min. integrating <a href="http://framework.zend.com" target="_blank">Zend Framework</a> to existing project.
 
 <h3>Problem</h3>
 
-After this I started thinking how to integrate <strong>Composer</strong> into my deployment. I'm using Capistrano for deployment which is another great gem written in <a href="http://www.ruby-lang.org/en/" target="_blank">Ruby</a>. Main problem which I was solving - when deploying project Capsitrano creates new directories from each deployment. So each time Composer installed libs over & over.
+After this I started thinking how to integrate <strong>Composer</strong> into my deployment. I'm using Capistrano for deployment which is another great gem written in <a href="http://www.ruby-lang.org/en/" target="_blank">Ruby</a>. Main problem which I was solving - when deploying project Capsitrano creates new directories from each deployment. So each time Composer installed packages over & over again.
 
 <h3>Solution</h3>
 
