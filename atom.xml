@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[aur1mas &lt;Aurimas Baubkus&gt;]]></title>
+  <title><![CDATA[aur1mas &lt;Aurimas Baubkus&gt]]></title>
   <link href="http://aur1mas.github.com/atom.xml" rel="self"/>
   <link href="http://aur1mas.github.com/"/>
-  <updated>2012-07-13T18:28:15+03:00</updated>
+  <updated>2012-12-26T10:07:51+02:00</updated>
   <id>http://aur1mas.github.com/</id>
   <author>
     <name><![CDATA[aur1mas]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Put Back multiple files in MacOS]]></title>
+    <link href="http://aur1mas.github.com/blog/2012/10/23/put-back-multiple-files/"/>
+    <updated>2012-10-23T23:42:00+03:00</updated>
+    <id>http://aur1mas.github.com/blog/2012/10/23/put-back-multiple-files</id>
+    <content type="html"><![CDATA[<p>Recently, I&#8217;ve faced the problem that you can&#8217;t <i>put back</i> multiple files at once from Trash in MacOS.</p>
+
+<p>The problem is that MacOS can&#8217;t restore 2 (or more) files from different directories. WTF?</p>
+
+<p>At first, I was very frustrated because I had ~10000 files in there. Started looking out for a proper solutions &amp; <a target="_blank" href="http://giacomoballi.com/applescript.html">found script</a>, which automates restoring process.</p>
+
+<p>Script often failed, so I tweaked it &amp; here is my version. I hope it could help you ;)</p>
+
+<div><script src='https://gist.github.com/3940963.js'></script>
+<noscript><pre><code>tell application &quot;System Events&quot;
+    tell process &quot;Finder&quot;
+        repeat 100 times
+            tell application &quot;Finder&quot; to open trash
+            tell application &quot;Finder&quot; to activate
+            key code 126
+            key down command
+            key code 51
+            key up command
+            delay 0.2 -- adjust delay as needed
+        end repeat
+    end tell
+end tell
+tell application &quot;Finder&quot; to close every window</code></pre></noscript></div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Composer + Capistrano]]></title>
@@ -35,7 +67,7 @@
 
 <p>In the end I only had to write few lines of code &amp; put them in deploy.rb file.</p>
 
-<pre><code>before "deploy:finalize_update", "deploy:remove_dirs"
+<pre><code>before "deploy:restart", "deploy:install"
 
 namespace :deploy do
     desc "run composer install and ensure all dependencies are installed"

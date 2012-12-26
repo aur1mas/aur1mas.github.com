@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>aur1mas &lt;Aurimas Baubkus&gt;</title>
+  <title>aur1mas &lt;Aurimas Baubkus&gt</title>
   <meta name="author" content="aur1mas">
 
   
-  <meta name="description" content="Background After playing around with Ruby on Rails it was hard to comeback to PHP frameworks world. A lot of functionality was missing (assets, easy &hellip;">
+  <meta name="description" content="Recently, I&#8217;ve faced the problem that you can&#8217;t put back multiple files at once from Trash in MacOS. The problem is that MacOS can&#8217; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +24,7 @@
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="aur1mas &lt;Aurimas Baubkus&gt;" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="aur1mas &lt;Aurimas Baubkus&gt" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -47,7 +47,7 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">aur1mas &lt;Aurimas Baubkus&gt;</a></h1>
+  <h1><a href="/">aur1mas &lt;Aurimas Baubkus&gt</a></h1>
   
     <h2>a language only as good as its developer is</h2>
   
@@ -82,6 +82,67 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/10/23/put-back-multiple-files/">Put Back Multiple Files in MacOS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-23T23:42:00+03:00" pubdate data-updated="true">Oct 23<span>rd</span>, 2012</time>
+        
+         | <a href="/blog/2012/10/23/put-back-multiple-files/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recently, I&#8217;ve faced the problem that you can&#8217;t <i>put back</i> multiple files at once from Trash in MacOS.</p>
+
+<p>The problem is that MacOS can&#8217;t restore 2 (or more) files from different directories. WTF?</p>
+
+<p>At first, I was very frustrated because I had ~10000 files in there. Started looking out for a proper solutions &amp; <a target="_blank" href="http://giacomoballi.com/applescript.html">found script</a>, which automates restoring process.</p>
+
+<p>Script often failed, so I tweaked it &amp; here is my version. I hope it could help you ;)</p>
+
+<div><script src='https://gist.github.com/3940963.js'></script>
+<noscript><pre><code>tell application &quot;System Events&quot;
+    tell process &quot;Finder&quot;
+        repeat 100 times
+            tell application &quot;Finder&quot; to open trash
+            tell application &quot;Finder&quot; to activate
+            key code 126
+            key down command
+            key code 51
+            key up command
+            delay 0.2 -- adjust delay as needed
+        end repeat
+    end tell
+end tell
+tell application &quot;Finder&quot; to close every window</code></pre></noscript></div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/07/12/configuring-composer-to-work-with-capistrano/">Composer + Capistrano</a></h1>
     
     
@@ -99,6 +160,8 @@
 
 
 <time datetime="2012-07-12T23:42:00+03:00" pubdate data-updated="true">Jul 12<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/07/12/configuring-composer-to-work-with-capistrano/#disqus_thread">Comments</a>
         
       </p>
     
@@ -122,7 +185,7 @@
 
 <p>In the end I only had to write few lines of code &amp; put them in deploy.rb file.</p>
 
-<pre><code>before "deploy:finalize_update", "deploy:remove_dirs"
+<pre><code>before "deploy:restart", "deploy:install"
 
 namespace :deploy do
     desc "run composer install and ensure all dependencies are installed"
@@ -165,10 +228,43 @@ end
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/10/23/put-back-multiple-files/">Put Back multiple files in MacOS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/07/12/configuring-composer-to-work-with-capistrano/">Composer + Capistrano</a>
       </li>
     
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/aur1mas">@aur1mas</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'aur1mas',
+            count: 2,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -219,6 +315,15 @@ end
 </script>
 
 
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
