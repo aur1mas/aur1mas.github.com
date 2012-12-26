@@ -20,7 +20,7 @@ After this I started thinking how to integrate <strong>Composer</strong> into my
 
 In the end I only had to write few lines of code & put them in deploy.rb file.
 
-    before "deploy:finalize_update", "deploy:remove_dirs"
+    before "deploy:restart", "deploy:install"
 
     namespace :deploy do
         desc "run composer install and ensure all dependencies are installed"
@@ -33,7 +33,6 @@ In the end I only had to write few lines of code & put them in deploy.rb file.
 I think code is self explanatory & I don't have write what every line does. But if you have any questions - feel free to ask in comments.
 
 <strong>P.S.</strong> improve my english :) If you've noticed any mistakes - write in comments. Thanks!
-
 <h3>Resources</h3>
 <ul>
     <li><a href="http://www.getcomposer.org" target="_blank">Composer</a></li>
