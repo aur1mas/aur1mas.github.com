@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Put Back multiple files in MacOS"
 date: 2012-10-23 23:42
 comments: true

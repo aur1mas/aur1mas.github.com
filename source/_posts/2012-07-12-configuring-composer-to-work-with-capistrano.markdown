@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Composer + Capistrano"
 date: 2012-07-12 23:42
 comments: true
